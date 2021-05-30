@@ -1,0 +1,11 @@
+亲爱的 {{ user.username }},
+
+点击此链接确认新 邮箱地址:
+
+{{ url_for('auth.change_email', token=token, _external=True) }}
+
+因此,
+
+博客开发团队
+
+注意不需要回复此邮件

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}博客 - 编辑个人信息{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    {% if current_user.is_administrator() %}
+        <h1>请管理员编辑 {{ user.username }} 的资料</h1>
+    {% else %}
+        <h1>{{ user.username }}-请编辑你的资料</h1>
+    {% endif %}
+</div>
+<div class="col-md-4">
+    {{ wtf.quick_form(form) }}
+</div>
+{% endblock %}
